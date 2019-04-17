@@ -9,9 +9,10 @@ namespace CalendarRazor.Pages
 {
     public class IndexModel : PageModel
     {
+        public int MyProperty { get; set; }
         public void OnGet()
         {
-
+            MyProperty = 23;
         }
     }
 }

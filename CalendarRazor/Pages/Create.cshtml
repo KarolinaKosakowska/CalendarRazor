@@ -1,0 +1,113 @@
+﻿@page
+
+@model CalendarRazor.Pages.CreateModel
+
+@{
+
+    ViewData["Title"] = "Create";
+
+}
+
+
+
+<h2>Create</h2>
+
+
+
+<div class="row">
+
+    <div class="col-md-4">
+
+        <form method="post">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+
+            <div class="form-group">
+
+                <label asp-for="Item.CalendarType.Name" class="control-label"></label>
+
+                <input asp-for="Item.CalendarType.Name" class="form-control" />
+
+                <span asp-validation-for="Item.CalendarType.Name" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="Item.CalendarTask.StartDate" class="control-label"></label>
+
+                <input asp-for="Item.CalendarTask.StartDate" class="form-control" />
+
+                <span asp-validation-for="Item.CalendarTask.StartDate" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="Item.CalendarTask.EndDate" class="control-label"></label>
+
+                <input asp-for="Item.CalendarTask.EndDate" class="form-control" />
+
+                <span asp-validation-for="Item.CalendarTask.EndDate" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="Item.CalendarTask.Description" class="control-label"></label>
+
+                <input asp-for="Item.CalendarTask.Description" class="form-control" />
+
+                <span asp-validation-for="Item.CalendarTask.Description" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="Item.CalendarTask.Localization" class="control-label"></label>
+
+                <input asp-for="Item.CalendarTask.Localization" class="form-control" />
+
+                <span asp-validation-for="Item.CalendarTask.Localization" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <label asp-for="Item.CalendarTask.Owner" class="control-label"></label>
+
+                <input asp-for="Item.CalendarTask.Owner" class="form-control" />
+
+                <span asp-validation-for="Item.CalendarTask.Owner" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <input type="submit" value="Create" class="btn btn-default" />
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<div>
+
+    <a asp-page="Index">Back to List</a>
+
+</div>
+
+
+
+@section Scripts {
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}
