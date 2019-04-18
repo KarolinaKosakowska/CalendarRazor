@@ -8,5 +8,6 @@ namespace CalendarRazor.Models
     public class CalendarType: Entity
     {
         public  string Name { get; set; }
+    
     }
 }

@@ -24,13 +24,15 @@ namespace CalendarRazor.Pages
 
         }
         public async Task<IActionResult> OnPostAsync()
-
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
             await uow.AddTypeWithTask(Item);
+            //await uow.TasksRepo.GetAsync(2); dodawanie pojedynczych rzeczy do bazy
+            //await uow.SaveChanges();
+
             return RedirectToPage("./Index");
         }
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CalendarRazor.Repos
 {
-    public class TypesRepo : Repo<CalendarTask>
+    public class TypesRepo : Repo<CalendarType>
     {
         public TypesRepo(CalendarContext context) : base(context)
         {

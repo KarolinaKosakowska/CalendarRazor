@@ -3,5 +3,17 @@
 @{
     ViewData["Title"] = "Home page";
 }
-<h2>Kalendarz</h2>
-<p>@Model.MyProperty</p>
+<h2>Kalendarz <a asp-page="Create" class="btn btn-default">Dodaj</a>    
+</h2>
+<button onclick="getCalendarContent()">Kabumm</button>
+@if (Model != null && Model.Dates != null && Model.Dates.Count > 0)
+{
+<div id="calendarContent">
+    <partial name="_Calendar" model="@Model" />
+</div>
+   
+}
+else
+{
+    <h3>Brak daty</h3>
+}

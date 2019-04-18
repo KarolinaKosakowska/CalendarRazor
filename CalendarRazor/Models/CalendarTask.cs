@@ -13,5 +13,6 @@ namespace CalendarRazor.Models
         public string Localization { get; set; }
         public string Owner { get; set; }
         public CalendarType CalendarType { get; set; }
+        public int? CalendarTypeID { get; set; }
     }
 }
