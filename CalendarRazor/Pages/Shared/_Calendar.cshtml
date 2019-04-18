@@ -12,23 +12,27 @@
     <tbody>
         @for (int i = 0; i < 24; i++)
         {
-            <tr>
-                <td>@i:00</td>
-                @foreach (var date in Model.Dates)
+        <tr>
+            <td>@i:00</td>
+            @foreach (var date in Model.Dates)
+            {
+                var tasks = Model.Tasks.Where(a => a.StartDate.Day == date.Day).ToList();
+                foreach (var task in tasks)
                 {
-                    var task = Model.Tasks.FirstOrDefault(a => a.StartDate.Day == date.Day);
                     if (task != null && task.StartDate != null && task.StartDate.Hour == i)
                     {
-                        <td><partial name="_Task" model="@task" /></td>
+                        <td id="d_@(date.Day)_@i"><partial name="_Task" model="@task" /></td>
                     }
                     else
                     {
-                        <td></td>
+                        <td id="d_@(date.Day)_@i"></td>
                     }
 
                 }
 
-            </tr>
+            }
+
+        </tr>
         }
         <tr></tr>
     </tbody>
